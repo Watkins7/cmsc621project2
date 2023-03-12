@@ -25,6 +25,7 @@ import (
 	"log"
 	"time"
 
+	vb "github.com/Watkins7/cmsc621project2/tree/master/helloworld"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
 	pb "google.golang.org/grpc/examples/helloworld/helloworld"
@@ -65,7 +66,7 @@ func main() {
 
 	c1 := pb.NewGreeterClient(conn)
 
-	r, err = c1.SayHello(ctx, &pb.CreateIDRequest{Id: *name})
+	r, err = c1.SayHello(ctx, &vb.CreateIDRequest{Id: *name})
 	if err != nil {
 		log.Fatalf("could not greet: %v", err)
 	}
